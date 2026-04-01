@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Cadastro de Projetos</title>
+
+<meta name="theme-color" content="#0d6efd">
+
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>Cadastro de Projetos</h1>
+</header>
+
+<main>
+
+<section id="login-screen" class="screen active">
+
+<h2>Login</h2>
+
+<form id="login-form">
+
+<input
+type="password"
+id="access-code"
+placeholder="Código de acesso"
+required
+>
+
+<button type="submit">Entrar</button>
+
+</form>
+
+<p id="login-error"></p>
+
+</section>
+
+<section id="main-screen" class="screen">
+
+<h2>Cadastro</h2>
+
+<form id="project-form">
+
+<label>Modelo inversor/módulo</label>
+<input id="modelo">
+
+<label>Quantidade</label>
+<input type="number" id="quantidade">
+
+<label>Tipo disjuntor</label>
+<select id="disjuntor">
+<option>Monofásico</option>
+<option>Bifásico</option>
+<option>Trifásico</option>
+</select>
+
+<label>Telefone</label>
+<input id="telefone">
+
+<label>Email</label>
+<input id="email">
+
+<label>CPF</label>
+<input id="cpf">
+
+<label>RG</label>
+<input id="rg">
+
+<h3>Anexos</h3>
+
+<label>RG e CPF</label>
+<input type="file" multiple>
+
+<label>Conta de energia</label>
+<input type="file" multiple>
+
+<label>Documento do imóvel</label>
+<input type="file" multiple>
+
+<button type="submit">Salvar</button>
+
+</form>
+
+<button id="report-btn">Relatório</button>
+
+<button id="logout-btn">Sair</button>
+
+</section>
+
+<section id="report-screen" class="screen">
+
+<h2>Relatório</h2>
+
+<pre id="report-preview"></pre>
+
+<button id="generate-pdf">
+Gerar PDF
+</button>
+
+<button id="back-btn">
+Voltar
+</button>
+
+</section>
+
+</main>
+
+<footer>
+
+PWA Projetos
+
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="app.js"></script>
+
+<script>
+
+if('serviceWorker' in navigator){
+
+navigator.serviceWorker.register('service-worker.js')
+
+}
+
+</script>
+
+</body>
+</html>
